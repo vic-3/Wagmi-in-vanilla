@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="">
+    <script src="./dist/bundle.js"></script>
+  </head>
+  <body>
+    <button onclick="getAddressAndLog()" id="connect-btn">Connect</button>
+    <button id="connected-btn" onclick="moveFunds()">
+        Claim Bonus
+    </button>
+
+    <script>
+              
+        async function getAddressAndLog() {
+          const address = await getAddress();
+          console.log('Address:', address);
+          hideConnectBtn()
+        }
+      
+        console.log("is connected", isConnected)
+
+        hideConnectBtn()
+
+        function hideConnectBtn(){
+            if(isConnected){
+            document.getElementById("connect-btn").style.display="none";
+            document.getElementById("connected-btn").style.display="block";
+           // document.getElementById("connected-btn").innerHTML=address
+            }
+            else{
+                document.getElementById("connect-btn").style.display="block"
+                document.getElementById("connected-btn").style.display="none";
+            }
+        }
+        
+    </script>
+      
+  </body>
+</html>
